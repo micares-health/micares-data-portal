@@ -9,9 +9,42 @@
     "attributes": {
       "content": {
         "title": "MI-CARES Research Data Portal",
-        "subtitle": "Dataset catalog and secure data access",
+        "subtitle": "Questionnaires, datasets, documentation, and secure data access",
         "privacy_policy": "This is an example privacy policy - you should replace this with your own policy.",
-        "terms_of_service": "This is an example terms of service - you should replace this with your own terms."
+        "terms_of_service": "This is an example terms of service - you should replace this with your own terms.",
+        "navigation": {
+          "items": [
+            {
+              "label": "Data catalog",
+              "to": "/"
+            },
+            {
+              "label": "Documentation",
+              "to": "/documentation"
+            },
+            {
+              "label": "Access guide",
+              "to": "/accessing-data"
+            }
+          ]
+        }
+      },
+      "theme": {
+        "colorScheme": "primary",
+        "colors": {
+          "primary": {
+            "50": "#EAF5F5",
+            "100": "#C6E4E3",
+            "200": "#9FD1CF",
+            "300": "#77BEBA",
+            "400": "#56AFAA",
+            "500": "#35A09A",
+            "600": "#2C8782",
+            "700": "#236D69",
+            "800": "#195451",
+            "900": "#0F3B39"
+          }
+        }
       },
       "globus": {
         "application": {

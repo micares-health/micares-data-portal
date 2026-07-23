@@ -1,9 +1,13 @@
-Files in this overlay:
+MI-CARES data portal repository files
 
-static.json
-content/index.md
-content/accessing-data.md
-content/datasets/micares-research-data-collection.md
-docs/ADD-A-DATASET.md
-README-CATALOG.md
-MANIFEST.txt
+Required root files:
+- package.json
+- package-lock.json
+- static.json
+- content/index.jsx
+- content/documentation.md
+- content/accessing-data.md
+- content/datasets/micares-research-data-collection.md
+- docs/EDIT-CATALOG.md
+
+Important: content/index.md was intentionally removed because it conflicts with content/index.jsx.
