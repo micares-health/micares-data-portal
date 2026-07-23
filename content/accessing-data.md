@@ -2,36 +2,33 @@
 
 [Back to the data catalog](/)
 
-The public catalog describes datasets. Globus provides the secure file access layer.
+The catalog and documentation pages are public. Globus remains responsible for authentication, authorization, download, and transfer of the actual data files.
 
-## Basic access flow
+## Recommended access flow
 
-1. Open a dataset record from the catalog.
-2. Review its description, release information, access level, and documentation.
-3. Select the Globus access link on the dataset page.
-4. Sign in with an identity accepted by Globus.
-5. Complete any collection activation or authorization step that Globus presents.
-6. Download an available file or transfer files to another Globus collection.
+1. Find the dataset in the catalog.
+2. Open its **Documentation** link and review the population, contents, release notes, and access requirements.
+3. Select **Open files** in the dataset row.
+4. Sign in to Globus with an accepted identity.
+5. Complete any collection activation or authorization step presented by Globus.
+6. Download an HTTPS-enabled file or transfer selected files to another Globus collection.
 
-## Permissions
+## Why each dataset has its own link
 
-A catalog link does not bypass collection permissions. A user must still have access to the collection or folder. Controlled datasets can therefore have public descriptions while their files remain restricted.
+Each data action should point to the exact dataset or release folder rather than the collection root. This reduces browsing and helps users confirm that the folder name matches the documentation they just reviewed.
 
-## Browser download versus transfer
+A folder-specific link follows this pattern:
 
-Individual files may have a browser download option when HTTPS access is enabled for the collection. Larger datasets are usually better handled as Globus transfers.
+`https://app.globus.org/file-manager?origin_id=COLLECTION_UUID&origin_path=URL_ENCODED_PATH`
 
-## Current collection links
+The link identifies a location only. It does not grant access or bypass the collection's permissions.
 
-[Browse the collection inside this portal](/transfer)
+## Browser download versus Globus transfer
 
-[Open the collection in Globus File Manager](https://app.globus.org/file-manager?origin_id=8c54bcd0-d1fa-45d5-bc88-4609de7c786f&origin_path=%2F)
+When HTTPS access is enabled, Globus may offer browser download for individual files. Larger releases are generally better transferred to a Globus collection available to the user, such as institutional storage or Globus Connect Personal.
 
-## Questions to answer before publishing a release
+## Current collection
 
-- Who may access the data?
-- Is approval or a data use agreement required?
-- Which files are included?
-- What version and release date should be cited?
-- Which variables, participants, or records are excluded?
-- Who should users contact for access or data questions?
+[Open the connected collection in Globus File Manager](https://app.globus.org/file-manager?origin_id=8c54bcd0-d1fa-45d5-bc88-4609de7c786f&origin_path=%2F)
+
+After dataset folders are finalized, replace the root path in each catalog record with its exact folder path.
