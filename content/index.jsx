@@ -43,18 +43,18 @@ const COLLECTION_ID = "8c54bcd0-d1fa-45d5-bc88-4609de7c786f";
 const DATASETS = [
   {
     id: "micares-research-data-collection",
-    release: "Replace with release",
-    component: "Replace with component",
+    release: "1.0",
+    component: "",
     title: "MI-CARES Research Data Collection",
     description:
-      "Starter catalog record for the collection currently connected to this portal. Replace this text with a concise description of the dataset.",
-    documentationHref: "/datasets/micares-research-data-collection",
+      "MI-CARES research data collection.",
+    documentationHref: "https://micares-health.github.io/micares-data-portal/transfer",
     filesHref: "https://micares-health.github.io/micares-data-portal/transfer",
     filesLocationLabel: "MI-CARES transfer portal",
-    formats: "Replace with CSV, SAS, PDF, or other formats",
-    access: "Controlled",
-    published: "Replace with date",
-    isExample: true,
+    formats: "Various",
+    access: "Restricted",
+    published: "2026-07-23",
+    isExample: false,
   },
 ];
 
@@ -143,8 +143,7 @@ export default function DataCatalogPage() {
               MI-CARES Data Catalog
             </Heading>
             <Text fontSize={{ base: "md", md: "lg" }} maxW="3xl" color="whiteAlpha.900">
-              Find a dataset, review its public documentation, and then open the
-              exact data folder in Globus for authorized download or transfer.
+              
             </Text>
             <Stack direction={{ base: "column", sm: "row" }} spacing={3} mt={6}>
               <Button as="a" href="#dataset-table" colorScheme="whiteAlpha">
@@ -170,71 +169,20 @@ export default function DataCatalogPage() {
             <VStack align="stretch" spacing={3} fontSize="sm">
               <HStack align="flex-start">
                 <Badge colorScheme="blue" mt={0.5}>1</Badge>
-                <Text>Choose a release and dataset.</Text>
+                <Text>Request access.</Text>
               </HStack>
               <HStack align="flex-start">
                 <Badge colorScheme="blue" mt={0.5}>2</Badge>
-                <Text>Read the documentation and release notes.</Text>
+                <Text>Read the research data guide.</Text>
               </HStack>
               <HStack align="flex-start">
                 <Badge colorScheme="blue" mt={0.5}>3</Badge>
-                <Text>Open the matching folder in Globus and sign in.</Text>
+                <Text>Sign in and browse or transfer data.</Text>
               </HStack>
             </VStack>
           </Box>
         </Grid>
       </Box>
-
-      <Alert status="warning" borderRadius="md" alignItems="flex-start">
-        <AlertIcon mt={1} />
-        <Box>
-          <Text fontWeight="bold">Prototype catalog record</Text>
-          <Text fontSize="sm">
-            The first row is a working template. Replace its release, component,
-            date, description, documentation, and Globus folder path before a
-            production launch.
-          </Text>
-        </Box>
-      </Alert>
-
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4}>
-        <Box borderWidth="1px" borderRadius="lg" p={5}>
-          <Text fontSize="sm" color="gray.600" fontWeight="bold" textTransform="uppercase">
-            Datasets
-          </Text>
-          <Heading as="h2" size="md" mt={2} mb={2}>
-            One row per file group
-          </Heading>
-          <Text fontSize="sm" color="gray.700">
-            Organize records by release and component, similar to the NHANES data
-            file index.
-          </Text>
-        </Box>
-        <Box borderWidth="1px" borderRadius="lg" p={5}>
-          <Text fontSize="sm" color="gray.600" fontWeight="bold" textTransform="uppercase">
-            Documentation
-          </Text>
-          <Heading as="h2" size="md" mt={2} mb={2}>
-            Explain before access
-          </Heading>
-          <Text fontSize="sm" color="gray.700">
-            Each row links to a public page for codebooks, populations, methods,
-            exclusions, and release notes.
-          </Text>
-        </Box>
-        <Box borderWidth="1px" borderRadius="lg" p={5}>
-          <Text fontSize="sm" color="gray.600" fontWeight="bold" textTransform="uppercase">
-            Secure data
-          </Text>
-          <Heading as="h2" size="md" mt={2} mb={2}>
-            Globus remains the gate
-          </Heading>
-          <Text fontSize="sm" color="gray.700">
-            The data action opens the exact Globus folder without changing its
-            authentication or authorization rules.
-          </Text>
-        </Box>
-      </SimpleGrid>
 
       <Box id="dataset-table" scrollMarginTop="6rem">
         <Flex
@@ -402,33 +350,6 @@ export default function DataCatalogPage() {
           </Box>
         )}
       </Box>
-
-      <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap={5}>
-        <Box borderWidth="1px" borderRadius="lg" p={6}>
-          <Heading as="h2" size="md" mb={2}>
-            Study-wide documentation
-          </Heading>
-          <Text color="gray.700" mb={4}>
-            Publish data dictionaries, analytic guidance, methods, release notes,
-            and data-use information in one public documentation area.
-          </Text>
-          <Button as={NextLink} href="/documentation" variant="outline">
-            Open documentation
-          </Button>
-        </Box>
-        <Box borderWidth="1px" borderRadius="lg" p={6}>
-          <Heading as="h2" size="md" mb={2}>
-            Download and transfer help
-          </Heading>
-          <Text color="gray.700" mb={4}>
-            Explain sign-in, collection authorization, browser download, and
-            Globus transfer before users reach the file browser.
-          </Text>
-          <Button as={NextLink} href="/accessing-data" variant="outline">
-            Read the access guide
-          </Button>
-        </Box>
-      </Grid>
     </VStack>
   );
 }
