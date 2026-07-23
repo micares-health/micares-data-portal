@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useMemo, useState } from "react";
 import NextLink from "next/link";
 import {
