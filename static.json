@@ -27,7 +27,8 @@
               "to": "/accessing-data"
             }
           ]
-        }
+        },
+        "image": "/micares-header-green.svg"
       },
       "theme": {
         "colorScheme": "primary",
