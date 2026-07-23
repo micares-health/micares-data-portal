@@ -37,7 +37,8 @@ const COLLECTION_ID = "8c54bcd0-d1fa-45d5-bc88-4609de7c786f";
  *
  * Copy the object below once for every dataset or release. The public page is
  * generated from this array. The documentationHref points to a public page in
- * this repository. The globusPath points to the exact folder in Globus.
+ * this repository. filesHref points to the portal page used to access files.
+ * For individual datasets, it may instead be a folder-specific Globus URL.
  */
 const DATASETS = [
   {
@@ -48,7 +49,8 @@ const DATASETS = [
     description:
       "Starter catalog record for the collection currently connected to this portal. Replace this text with a concise description of the dataset.",
     documentationHref: "/datasets/micares-research-data-collection",
-    globusPath: "/",
+    filesHref: "https://micares-health.github.io/micares-data-portal/transfer",
+    filesLocationLabel: "MI-CARES transfer portal",
     formats: "Replace with CSV, SAS, PDF, or other formats",
     access: "Controlled",
     published: "Replace with date",
@@ -365,7 +367,10 @@ export default function DataCatalogPage() {
                   </Td>
                   <Td whiteSpace="normal">
                     <Link
-                      href={globusFileManagerUrl(dataset.globusPath)}
+                      href={
+                        dataset.filesHref ||
+                        globusFileManagerUrl(dataset.globusPath)
+                      }
                       color="primary.700"
                       fontWeight="semibold"
                       isExternal
@@ -373,7 +378,7 @@ export default function DataCatalogPage() {
                       Open files <ExternalLinkIcon mx="2px" />
                     </Link>
                     <Text fontSize="xs" color="gray.600" mt={1}>
-                      {dataset.globusPath}
+                      {dataset.filesLocationLabel || dataset.globusPath}
                     </Text>
                   </Td>
                   <Td whiteSpace="normal">{dataset.published}</Td>
